@@ -1,0 +1,24 @@
+<body>
+    <form #modificarCompraForm="ngForm" id="formModificar" (ngSubmit)="onSubmit(modificarCompraForm)">
+        <p id="titulo_form"> MODIFICAR UNA COMPRA</p> <br>
+        <p > <input readonly type="text" name="titulo_actividad" id="titulo_actividad" [(ngModel)]="compra.titulo_actividad"> </p> 
+        <p id="texto">ID articulo: <br>
+            <input readonly type="text" name="ID_articulo"  [(ngModel)]="compra.ID_articulo"> </p> 
+        <p id="texto">ID compra: <br>
+            <input readonly type="text" name="ID_compra" required [(ngModel)]="compra._id">
+        </p>
+        <p id="texto">Cantidad: <br>
+            <input readonly type="text" name="cantidad" required [(ngModel)]="compra.cantidad" placeholder="Introduzca la cantidad que quiera comprar">
+        </p>
+        <p id="texto">Nombre: <br>
+            <input type="text" name="nombre_comprador" required [(ngModel)]="compra.nombre_comprador" placeholder="Introduzca su nombre">
+        </p>
+        <p id="texto">ID usuario: <br>
+            <input readonly type="text" name="ID_cliente" required [(ngModel)]="compra.ID_cliente" placeholder="Introduzca su ID">
+        </p>
+        <p id="texto">Dirección: <br>
+            <input type="text" name="direccion" required [(ngModel)]="compra.direccion" placeholder="Introduzca su dirección">
+        </p>
+        <button id="button" id="boton_comprar" type="submit">Modificar Compra</button>
+    </form>
+</body>

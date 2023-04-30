@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap%27');
+
+#formModificar{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 500px;
+    padding: 80px;
+    border-radius: 5px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(2, 33, 2);
+    font-family: 'Fjalla One', sans-serif;
+} 
+
+#titulo_form{
+    font: inherit;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#titulo_actividad{
+    font: inherit;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#titulo_actividad{
+    font: inherit;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#texto{
+    font: inherit;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: normal;
+    width: 100%;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    text-align: left;
+}
+/* barra de insertar texto */
+input[type="text"]{
+    font:inherit;
+    font-size: 17px;
+    width: 500px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: black;
+    border:none;
+    outline: none;
+    background: transparent;
+}
+
+#boton_comprar{
+    font: inherit;
+    border-radius:7px;
+    width: 100%;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    touch-action: manipulation;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,99 @@
+<body>
+  <header>
+  <nav>
+    <ul>
+      <li><a id="boton_nav"  href="">Inicio</a></li>
+      <li><a href="#mostrarActividades" ><button id="boton_nav" (click)="mostrarActividades()">Actividades</button></a></li>
+      <li><a href="#misCompras" ><button id="boton_nav" (click)="mostrarMisCompras()">Mis compras</button></a></li>
+    </ul>
+    <input id="buscador_nav" style="display: none;" type="text" [(ngModel)]="searchTerm" (keyup)="onSearch()" placeholder="Búsqueda">
+    <div class="logo_nav">
+      <a href=""><img src="./assets/logo_nav.ico"></a>
+    </div>
+  </nav>
+</header>
+  <div id="hover" class="titulo">
+    <h1>HEMICA</h1>
+  </div>
+  <div id="mostrarActividades" style="display:none;" >
+    <form name="myfirstform" id="formGet">
+      
+      <div id="barraFiltros">
+        <div id="filtroPrecio">
+          <label id="tituloFiltro" for="filtrarPorPrecio">Ordenar por precio: </label>
+          <select id="filtrarPorPrecio" (change)="filtrar($event)">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+          </select>
+        </div>
+
+        <div id="filtroDificultad">
+          <label id="tituloFiltro" for="filtrarPorDificultad">Seleccionar Dificultad: </label>
+          <select id="filtrarPorDificultad" (change)="filtrar($event)">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+          </select>
+        </div>
+
+        <div id="filtroCategoria">
+          <label id="tituloFiltro" for="filtrarPorCategoria">Seleccionar Categorías: </label>
+          <input type="checkbox" name="categoria" value="Relax" (click)="filtrar($event)">Relax
+          <input type="checkbox" name="categoria" value="Cultura" (click)="filtrar($event)">Cultura
+          <input type="checkbox" name="categoria" value="Aventura" (click)="filtrar($event)">Aventura
+          <input type="checkbox" name="categoria" value="Acuáticas" (click)="filtrar($event)">Acuáticas
+          <input type="checkbox" name="categoria" value="Deportes" (click)="filtrar($event)">Deportes
+        </div>
+      </div> 
+
+      <div class="Actividades" *ngFor="let activity of ActivitiesToDisplay">
+        <div class="cuadroActividad">
+          <div class="izquierdaActividad">
+            <p id="tituloActividad">{{activity.titulo}}</p>
+            <p id="idActividad">ID: {{activity._id}}</p>
+            <p id="descripcion">{{activity.descripcion}}</p>
+            <label id="subtitulosInfo">Precio: </label><span>{{activity.precio}}€</span><br>
+            <label id="subtitulosInfo">Cantidad: </label><span>{{activity.cantidad}}</span><br>
+            <label id="subtitulosInfo">Dificultad: </label><span>{{activity.dificultad}}</span><br>
+            <label id="subtitulosInfo">Localización: </label><span>{{activity.localizacion}}</span><br>
+            <label id="subtitulosInfo">Edad: </label><span>{{activity.edad}}</span><br>
+            <label id="subtitulosInfo">Duración: </label><span>{{activity.duracion}}</span><br><br>
+            <div class="botonesActividad">
+              <a href="#comprar" ><button id="botonComprar" (click)="mostrarFormCompra(activity)">Comprar</button></a>
+            </div>
+          </div>
+          <div class="derechaActividad">
+            <p id="categoria">{{activity.categoria}}</p>
+            <img [src]="getImageUrl(activity)">
+           </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="modificarForm" style="display:none;">
+    <app-modificar></app-modificar>
+  </div>
+  <div id="Comprar" style="display:none;">
+    <app-compra></app-compra>
+  </div>
+  <div id="misCompras" style="display:none;">
+    <div class="compras" *ngFor="let compra of ComprasToDisplay">
+      <div class="cuadroActividad">
+        <div class="izquierdaActividad">
+          <p id="tituloActividad">{{compra.titulo_actividad}}</p>
+          <label id="subtitulosInfo">ID Actividad: </label><span>{{compra.ID_articulo}}</span><br> 
+          <label id="subtitulosInfo">ID Cliente: </label><span>{{compra.ID_cliente}}</span><br>
+          <label id="subtitulosInfo">ID Compra:</label><span>{{compra._id}}</span><br>
+          <label id="subtitulosInfo">Nombre: </label><span>{{compra.nombre_comprador}}</span><br> 
+          <label id="subtitulosInfo">Dirección: </label><span>{{compra.direccion}}</span><br>
+          <label id="subtitulosInfo">Cantidad: </label><span>{{compra.cantidad}}</span><br><br>
+          <div class="botonesActividad">
+            <a href="#modificarForm"><button id="botonModificar" (click)="modificar(compra)">Modificar</button></a>
+            <button id="botonEliminar" (click)="deleteCompras(compra)">Cancelar Compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

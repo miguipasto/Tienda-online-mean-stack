@@ -1,0 +1,69 @@
+version: '3'
+services:
+
+  microservicio_actividades:
+    build:
+      context: ./BackEnd
+      dockerfile: DockerfileActividades
+    image: microservicio_actividades
+    container_name: microservicio_actividades
+    network_mode: host
+    environment:
+      - MONGO_URI=mongodb://localhost/database_web_c
+    depends_on:
+      - mongo
+  
+  microservicio_compras:
+    build:
+      context: ./BackEnd
+      dockerfile: DockerfileCompras
+    image: microservicio_compras
+    container_name: microservicio_compras
+    network_mode: host
+    environment:
+      - MONGO_URI=mongodb://localhost/database_web_c
+    depends_on:
+      - mongo
+  
+  microservicio_usuarios:
+    build:
+      context: ./BackEnd
+      dockerfile: DockerfileUsuarios
+    image: microservicio_usuarios
+    container_name: microservicio_usuarios
+    network_mode: host
+    environment:
+      - MONGO_URI=mongodb://localhost/database_web_c
+    depends_on:
+      - mongo
+
+  frontend_actividades:
+    build:
+      context: ./FrontEnd/Actividades
+      dockerfile: Dockerfile
+    image: frontend_actividades
+    container_name: frontend_actividades
+    network_mode: host
+
+  frontend_compras:
+    build:
+      context: ./FrontEnd/Compras
+      dockerfile: Dockerfile
+    image: frontend_compras
+    container_name: frontend_compras
+    network_mode: host
+
+  frontend_usuarios:
+    build:
+      context: ./FrontEnd/Usuarios
+      dockerfile: Dockerfile
+    image: frontend_usuarios
+    container_name: frontend_usuarios
+    network_mode: host
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    network_mode: host
+    volumes:
+      - ./BackEnd:/MongoDB/data/db

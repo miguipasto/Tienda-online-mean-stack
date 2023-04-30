@@ -1,0 +1,50 @@
+<body>
+    <div class="form">
+    <form #updateForm="ngForm" (ngSubmit)="onSubmit(updateForm)">
+    <p id="titulo_form"> ACTUALIZAR UNA ACTIVIDAD</p> <br>
+    <p id="texto">Título de la actividad: <br>
+        <input type="text" name="titulo" id="titulo" required [(ngModel)]="activity.titulo" placeholder="Título">
+    </p>
+    <p id="texto">Número de participantes: <br>
+        <input type="text" name="participantes" id="participantes" required [(ngModel)]="activity.participantes" placeholder="Participantes">
+    </p>
+    <p id="texto">Localización: <br>
+        <input type="text" name="localizacion" id="localizacion" required [(ngModel)]="activity.localizacion" placeholder="Localización"> 
+    </p>
+    <p id="texto">Precio: <br>
+        <input type="text" name="precio" id="precio" required [(ngModel)]="activity.precio" placeholder="Precio">
+    </p>
+    <p id="texto">Cantidad: <br>
+        <input type="text" name="cantidad" id="cantidad" required [(ngModel)]="activity.cantidad" placeholder="Cantidad">
+    </p>
+    <p id="texto">Duración: <br>
+        <input type="text" name="duracion" id="duracion" required [(ngModel)]="activity.duracion" placeholder="Duración">
+    </p>
+    <p id="texto">Descripción: <br>
+        <textarea  rows=5 placeholder="Descripción" name="descripcion" required [(ngModel)]="activity.descripcion"></textarea>
+    </p>
+    <p id="elegir">Edad permitida: <br>
+        <input type="radio" name="edad" id="edad" value="Menor de 18" required [(ngModel)]="activity.edad"><label>Menor de 18</label> 
+        <input type="radio" name="edad" id="edad" value="Entre 18 y 30"  [(ngModel)]="activity.edad" ><label>Entre 18 y 30</label> 
+        <input type="radio" name="edad" id="edad" value="Mayores de 30"  [(ngModel)]="activity.edad" ><label>Mayores de 30</label> 
+    </p>
+    <p id="elegir">Dificultad: <br>
+        <input type="radio" name="dificultad" id="dificultad" value="Baja" required [(ngModel)]="activity.dificultad"><label>Baja</label>        
+        <input type="radio" name="dificultad" id="dificultad" value="Media"  [(ngModel)]="activity.dificultad" ><label>Media</label>     
+        <input type="radio" name="dificultad" id="dificultad" value="Alta"  [(ngModel)]="activity.dificultad" ><label>Alta</label>      
+    </p>
+    <p id="elegir">Categoría: <br>
+        <input type="radio" name="categoria" value="Relax" required [(ngModel)]="activity.categoria"><label>Relax</label>
+        <input type="radio" name="categoria" value="Aventura" [(ngModel)]="activity.categoria" ><label>Aventura</label>
+        <input type="radio" name="categoria" value="Cultura" [(ngModel)]="activity.categoria"><label>Cultura</label><br>
+        <input type="radio" name="categoria" value="Deportes" [(ngModel)]="activity.categoria"><label>Deportes</label>
+        <input type="radio" name="categoria" value="Acuáticas"[(ngModel)]="activity.categoria"><label>Acuáticas</label>
+    </p>
+    <p id="texto">Imagen: <br>
+        <img [src]="getImageUrl(activity)">
+        <input type="file" id="boton_imagen" name="imagen" accept="image/*" (change)="onFileChange($event)">
+    </p><br>
+    <button id="button" id="boton_actualizar" type="submit">Actualizar Actividad</button>
+    </form>
+    </div>
+</body>

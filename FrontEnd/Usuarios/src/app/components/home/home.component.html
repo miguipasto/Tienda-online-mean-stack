@@ -1,0 +1,43 @@
+<header>
+    <nav>
+        <ul>
+            <li><a id="boton_nav" href="">Inicio</a></li>
+            <li><a href="#consultar"><button id="boton_nav" (click)="consultarUsuarios()">Consultar usuarios</button></a></li>
+            <li><button id="boton_nav" (click)="eliminarUsuario()">Eliminar usuario</button></li>
+        </ul>
+        <input id="buscador_nav" type="text" [(ngModel)]="searchTerm" (keyup)="onSearch()"  placeholder="Búsqueda">
+        <div class="logo_nav">
+            <a href=""><img src="./assets/logo_nav.ico"></a>
+        </div>
+    </nav>
+</header>
+<div id="hover" class="titulo">
+    <h1>HEMICA</h1>
+    <div class="botonesCrear">
+        <div class="boton1">
+            <button id="botonAdministrador" (click)="crearAdministrador()">Crear Adminsitrador</button>
+        </div>
+        <div class="boton2">
+            <button id="botonUsuario" (click)="crearUsuario()">Crear Cliente</button>
+        </div>
+    </div>
+</div>
+
+<div id="consultar" style="display: none;">
+    <div id="filtroUsuarios">
+        <label id="tituloFiltro" for="filtarUsuarios">Seleccionar Usuarios: </label>
+        <input type="checkbox" name="usuarios" value="Administrador" (click)="filtrar($event)">Administradores
+        <input type="checkbox" name="usuarios" value="Cliente" (click)="filtrar($event)">Clientes
+    </div>
+
+    <div class="Usuarios" *ngFor="let usuario of usersToDisplay">
+        <div class="cuadroUsuario">
+            <div class="izquierdaUsuario">
+                <p id="rol">{{usuario.rol}} 
+                    <span id="idSubtitulo"> -> ID:{{usuario._id}}</span>  
+                </p>
+            </div> 
+        </div>
+</div>
+
+

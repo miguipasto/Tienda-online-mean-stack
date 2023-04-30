@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+body{
+    width: 1260px;
+}
+
+form{
+    margin-left: 25%;
+    width: 500px;
+    padding: 80px;
+    border-radius: 5px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(2, 33, 2);
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#titulo_form{
+    font: inherit;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#texto{
+    font: inherit;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: normal;
+    width: 100%;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    text-align: left;
+}
+/* barra de insertar texto */
+input[type="text"]{
+    font:inherit;
+    font-size: 17px;
+    width: 500px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: black;
+    border:none;
+    outline: none;
+    background: transparent;
+}
+
+textarea{
+    height: auto;
+    font:inherit;
+    font-size: 17px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: black;
+    border:none;
+    width: 500px;
+}
+
+#elegir{
+    margin-top: 20px;
+    font: inherit;
+    font-size: 20px;
+    appearance: none;
+    text-align: left;
+}
+input[type="radio"]{
+    flex: auto;
+    margin-top: 15px;
+    margin-left: 25px;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+input[type="radio"] + label{
+    display: inline-block;
+    font-size: 17px;
+    color:rgb(86, 86, 86);
+    width: 100px;
+}
+input[type="radio"]:checked + label{
+    color: black;
+}
+input[type="radio"]:hover{
+    cursor: pointer;
+}
+
+#texto input[type="file"] {
+    color: rgb(86, 86, 86);
+    border: none;
+    background-color: white;
+}
+
+#boton_actualizar{
+    font: inherit;
+    border-radius:7px;
+    width: 100%;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    touch-action: manipulation;
+    margin-bottom: 0px;
+}
+
+input[type="file"] {
+    border: none;
+    background: transparent;
+}
+
+#boton_imagen{
+    font: inherit;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+input[type="file"]::file-selector-button {
+    font: inherit;
+    background-color: white;
+    cursor:pointer;
+    padding: 7px;
+    border-radius:5px;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+}
+img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    margin-left: 25px;
+    margin-top:15px;
+}

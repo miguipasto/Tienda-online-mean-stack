@@ -1,0 +1,82 @@
+<body>
+  <header>
+  <nav>
+    <ul>
+      <li><a id="boton_nav"  href="">Inicio</a></li>
+      <li><a href="#escondido" ><button id="boton_nav" (click)="mostrarFormCrear()">Crear</button></a></li>
+      <li><a href="#consultar" ><button id="boton_nav" (click)="mostrarGet()">Consultar</button></a></li>
+    </ul>
+    <input id="buscador_nav" style="display:none;" type="text" [(ngModel)]="searchTerm" (keyup)="onSearch()" placeholder="Búsqueda">
+    <div class="logo_nav">
+      <a href=""><img src="./assets/logo_nav.ico"></a>
+    </div>
+  </nav>
+</header>
+  <div id="hover" class="titulo">
+    <h1>HEMICA</h1>
+  </div>
+  <div id="consultar" style="display:none;" >
+    <form name="myfirstform" id="formGet">
+      
+      <div id="barraFiltros">
+        <div id="filtroPrecio">
+          <label id="tituloFiltro" for="filtrarPorPrecio">Ordenar por precio: </label>
+          <select id="filtrarPorPrecio" (change)="filtrar($event)">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+          </select>
+        </div>
+
+        <div id="filtroDificultad">
+          <label id="tituloFiltro" for="filtrarPorDificultad">Seleccionar Dificultad: </label>
+          <select id="filtrarPorDificultad" (change)="filtrar($event)">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+          </select>
+        </div>
+
+        <div id="filtroCategoria">
+          <label id="tituloFiltro" for="filtrarPorCategoria">Seleccionar Categorías: </label>
+          <input type="checkbox" name="categoria" value="Relax" (click)="filtrar($event)">Relax
+          <input type="checkbox" name="categoria" value="Cultura" (click)="filtrar($event)">Cultura
+          <input type="checkbox" name="categoria" value="Aventura" (click)="filtrar($event)">Aventura
+          <input type="checkbox" name="categoria" value="Acuáticas" (click)="filtrar($event)">Acuáticas
+          <input type="checkbox" name="categoria" value="Deportes" (click)="filtrar($event)">Deportes
+        </div>
+      </div> 
+
+      <div class="Actividades" *ngFor="let activity of ActivitiesToDisplay">
+        <div class="cuadroActividad">
+          <div class="izquierdaActividad">
+            <p id="tituloActividad">{{activity.titulo}}</p>
+            <p id="idActividad">ID: {{activity._id}}</p>
+            <p id="descripcion">{{activity.descripcion}}</p>
+            <label id="subtitulosInfo">Precio: </label><span>{{activity.precio}}€</span><br>
+            <label id="subtitulosInfo">Cantidad: </label><span>{{activity.cantidad}}</span><br>
+            <label id="subtitulosInfo">Dificultad: </label><span>{{activity.dificultad}}</span><br>
+            <label id="subtitulosInfo">Localización: </label><span>{{activity.localizacion}}</span><br>
+            <label id="subtitulosInfo">Edad: </label><span>{{activity.edad}}</span><br>
+            <label id="subtitulosInfo">Duración: </label><span>{{activity.duracion}}</span><br><br>
+            <div class="botonesActividad">
+              <a href="#modificarForm"><button id="botonModificar" (click)="modificar(activity)">Modificar</button></a>
+              <button id="botonEliminar" (click)="deleteActivity(activity)">Eliminar</button>
+            </div>
+          </div>
+          <div class="derechaActividad">
+            <p id="categoria">{{activity.categoria}}</p>
+            <img [src]="getImageUrl(activity)">
+           </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="escondido" style="display:none;" >
+      <app-create-activities></app-create-activities>
+  </div>
+  <div id="modificarForm" style="display:none;">
+    <app-update-activities></app-update-activities>
+  </div>
+</body>

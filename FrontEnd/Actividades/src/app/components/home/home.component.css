@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 200px;
+    text-align: center;
+    color: black;
+}
+
+/* **Barra Navegador** */
+nav {
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#buscador_nav{
+    border:none;
+    height: 45px;
+}
+
+ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+#boton_nav{
+    border: none;
+    box-shadow: none;
+    display: block;
+    padding: 0 15px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    display: flex;
+    background-color: white;
+}
+#boton_nav:hover {
+    background-color: black;
+    color:white;
+}
+
+.logo_nav {
+    padding: 0 15px;
+}
+.logo_nav img {
+    height: 80px;
+    padding-right: 15px;
+    padding-top: 50px;
+}
+
+/* ***** */
+
+.titulo {    
+    padding: 250px;
+    background-image: url(/assets/fondo_home.jpg);
+    background-size: 100%;
+}
+
+/* **FILTROS** */
+#barraFiltros{
+    font: inherit;
+    font-size: 17px;
+    font-family: 'Fjalla One', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#tituloFiltro{
+    font: inherit;
+    color: rgb(7, 29, 7);
+    font-size: 20px;
+}
+
+select {
+    font: inherit;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    color: black;
+  }
+
+/* ***** */
+
+
+
+/* **ACTIVIDADES** */
+.Actividades{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.cuadroActividad { /*CADA CUADRO DE CADA ACTIVIDAD */
+    font: inherit;
+    font-size: 17px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* IZQUIERDA CUADRO ACTIVIDAD */
+.izquierdaActividad {
+    flex: 1;
+    width: 60%;
+    flex-basis: 60%;
+    padding: 0 20px;
+}
+#tituloActividad{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+}
+#idActividad{
+    font-size: 12px;
+}
+#descripcion{
+    text-align: justify;
+}
+#subtitulosInfo{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+}
+#botonModificar{
+    font-size: 15px;
+    padding: 10px;
+    width: 80px;
+    font-family: 'Fjalla One', sans-serif;
+    background-color: transparent;
+    cursor: pointer;    
+    border-radius: 5px;
+}  
+#botonModificar:hover{
+    color: white;
+    background-color: black;
+}  
+#botonEliminar{
+    padding: 10px;
+    margin-left: 20px;
+    width: 80px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 15px;
+    background-color: transparent;
+    cursor: pointer;   
+    border-radius: 5px;
+}
+#botonEliminar:hover{
+    color: white;
+    background-color: rgb(163, 0, 0);
+}
+  
+
+/* DERECHA CUADRO ACTIVIDAD */
+.derechaActividad {
+    flex: 2;
+    width: 40%;
+    flex-direction: column;
+    flex-basis: 40%;
+    padding: 0 20px;
+}
+#categoria{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(7, 29, 7);
+    text-align: right;
+    text-align: center;
+}
+.derechaActividad img{
+    width:100%;
+}
+
+
+/* ***** */
