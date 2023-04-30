@@ -5,9 +5,9 @@ Instalación y ejecución con 'docker-compose build' y 'docker-compose up'
 
 # Microservicios desarollados
 
-**Microservicio de Gestión de Artículos (https://localhost:8081)** : CRUD APP para la gestión de actividades. Creación, modificación, consulta y borrado. Sólo accesible para **Administradores.**
-**Microservicio de Gestión de Compras (https://localhost:8082)** : CRUD APP para la gestión de compras. Creación (compra), modificación, consulta y borrado (cancelación de compra) de las compras de un **Cliente**.
-**Microservicio de Gestión de Usuarios (https://localhost:8083)** : APP para la creación y eliminación de usuarios. Se pueden crear dos tipos de usuarios **Administradores** para el Microservicio de Gestión de Artículos y **Clientes** para el Microservicio de Gestión de Compras.
+- **Microservicio de Gestión de Artículos (https://localhost:8081)** : CRUD APP para la gestión de actividades. Creación, modificación, consulta y borrado. Sólo accesible para **Administradores.**
+- **Microservicio de Gestión de Compras (https://localhost:8082)** : CRUD APP para la gestión de compras. Creación (compra), modificación, consulta y borrado (cancelación de compra) de las compras de un **Cliente**.
+- **Microservicio de Gestión de Usuarios (https://localhost:8083)** : APP para la creación y eliminación de usuarios. Se pueden crear dos tipos de usuarios **Administradores** para el Microservicio de Gestión de Artículos y **Clientes** para el Microservicio de Gestión de Compras.
 
 Simula una web de compra donde administradores podrán gestionar los artículos a vender y los clientes comprar estos artículos.
 
