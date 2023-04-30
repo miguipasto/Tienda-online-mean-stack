@@ -66,4 +66,4 @@ services:
     container_name: mongo
     network_mode: host
     volumes:
-      - ./BackEnd:/MongoDB/data/db
+      - ./BD:/data/db
